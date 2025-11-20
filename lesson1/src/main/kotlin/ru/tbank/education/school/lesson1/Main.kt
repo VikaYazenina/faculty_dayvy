@@ -11,8 +11,6 @@ fun calculate(a: Double, b: Double, operation: OperationType): Double? {
         else -> a+b
     }
 }
-fun main(){
 
-}
 
 
