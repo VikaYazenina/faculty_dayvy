@@ -1,0 +1,16 @@
+product:
+  service:
+    max-products: 100
+    forbidden-names:
+      - "test"
+      - "admin"
+    allowed-categories:
+      - "electronics"
+      - "clothes"
+      - "books"
+      - "drinks"
+    validate-categories: true
+    enable-logging: true
+spring:
+  application:
+    name: product-service
