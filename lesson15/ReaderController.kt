@@ -12,6 +12,10 @@ class ReaderController(private val readerService: ReaderService) {
     fun getAllReaders(): List<Reader> {
         return readerService.getAllReaders()
     }
+    @PostMapping
+    fun addReader(@RequestBody request: AddReaderRequest): Reader {
+        return readerService.addReader(request.name, request.email, request.bookIds)
+    }
 
     
 }
