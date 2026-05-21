@@ -14,9 +14,9 @@ object CreateThreads {
         
         val threads = names.map { name ->
             Thread {
-                repeat(5) { [cite: 1]
+                repeat(5) { 
                     println("$name выводит сообщение") 
-                    Thread.sleep(500) [cite: 1]
+                    Thread.sleep(500)
                 }
             }.apply { 
                 this.name = name
