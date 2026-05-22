@@ -64,7 +64,7 @@ fun main() {
     println("Код: ${errorConn.responseCode}")
     val statusCode=errorConn.responseCode
     if (statusCode>=400){
-        val errorbody=errorConn.errorStream?.bufferedReader().readText()
+        val errorBody = errorConn.errorStream?.bufferedReader()?.readText() ?: ""
         println("Тело: $errorBody")
     }else{
         val Body = errorConn.inputStream.bufferedReader().readText()
@@ -337,7 +337,7 @@ fun main() {
     println("Код: ${res3.first}\nТело: ${res3.second}")
 
     // Шаг 4: обновить заметку     
-	println("\n=== 5. GET /api/notes?tag=учёба — фильтр по тегу ===")
+	println("\n=== 4. PUT /api/notes/1 — обновить заметку ===")
 	val updatedNote = """{"title":"Домашка (ред.)","content":"Задание уже почти готово","tag":"учёба"}"""
     val res4 = request("$BASE/1", "PUT", updatedNote)
     println("Код: ${res4.first}\nТело: ${res4.second}")
