@@ -63,7 +63,7 @@ fun main() {
     errorConn.requestMethod = "GET"
     println("Код: ${errorConn.responseCode}")
     val statusCode=errorConn.responseCode
-    if (statusСode>=400){
+    if (statusCode>=400){
         val errorbody=errorConn.errorStream?.bufferedReader().readText()
         println("Тело: $errorBody")
     }else{
@@ -124,7 +124,7 @@ fun getPosts(): String {
 /** GET /posts/{id} — получить пост по ID */
 fun getPost(id: Int): String {
     // TODO 2b
-    TODO("Реализуй getPost")
+    
     val(code, body)=sendRequest("$BASE_URL/$id", "GET")
     return "Code: $code\nBody: $body"
 }
@@ -132,7 +132,7 @@ fun getPost(id: Int): String {
 /** POST /posts — создать новый пост. Тело: {"title":"...", "body":"...", "userId":1} */
 fun createPost(json: String): String {
     // TODO 2c
-    TODO("Реализуй createPost")
+    
     val(code, body)=sendRequest(BASE_URL, "POST", json)
     return "Code: $code\nBody: $body"
 }
@@ -140,7 +140,7 @@ fun createPost(json: String): String {
 /** PUT /posts/{id} — полностью обновить пост */
 fun updatePost(id: Int, json: String): String {
     // TODO 2d
-    TODO("Реализуй updatePost")
+    
 	val(code, body)=sendRequest("$BASE_URL/$id", "PUT", json)
     return "Code: $code\nBody: $body"
 }
@@ -148,7 +148,7 @@ fun updatePost(id: Int, json: String): String {
 /** DELETE /posts/{id} — удалить пост, вернуть статус-код */
 fun deletePost(id: Int): Int {
     // TODO 2e
-    TODO("Реализуй deletePost")
+    
     val(code, body)=sendRequest("$BASE_URL/$id", "DELETE")
     return code
 }
